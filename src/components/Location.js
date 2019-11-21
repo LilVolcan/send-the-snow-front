@@ -15,9 +15,9 @@ export default class Location extends Component {
             })
         })
     }
- 
+
     render() {
-        console.log(this.props)
+        // console.log(this.props)
         return (
             <div>
                 <h1>WHERE IS THE FRESHEST POW?!</h1>
@@ -29,7 +29,7 @@ export default class Location extends Component {
                         </option>
                     ))}
                 </select>
-                <button className="select-state-btn" onClick={this.handleClick}>Let's Go!</button>
+                <button className="select-state-btn" onClick={this.props.handleClick}>Let's Go!</button>
             </div>
         )
     }

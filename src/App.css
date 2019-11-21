@@ -20,3 +20,21 @@
 .App-link {
   color: #09d3ac;
 }
+
+.intro-container {
+  text-align: center;
+  
+}
+
+.background {
+  padding: 350px;
+  background-image: url("https://wallpaperaccess.com/full/133703.jpg") ;
+  background-repeat: no-repeat;
+  background-position: center
+}
+
+.style-cards {
+  border: 1px solid firebrick;
+}
+
+

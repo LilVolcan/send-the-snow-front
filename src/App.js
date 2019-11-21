@@ -1,27 +1,33 @@
 import React, { Component } from "react";
 import RecContainer from "./containers/RecContainer";
-import { Route, Switch } from "react-router-dom";
+// import { Route, Switch } from "react-router-dom";
 import Location from "./components/Location";
+import "./App.css"
 
 export default class App extends Component {
   state = {
-    selectedState: null
+    selectedState: null,
+    topFive: null
   };
 
   handleChangeState = event => {
-    console.log(event.target.value);
+    // console.log(event.target.value);
     this.setState({
       selectedState: event.target.value
     });
   };
 
   handleClick = () => {
-    // console.log("selectedState from handleClick: ", this.state.selectedState)
-    fetch(`http://localhost:3000/resorts/${this.state.selectedState}`) //RETHINK ALL THIS!
-    //   .then(resp => resp.json())
-    //   .then(data => console.log(data));
+    fetch(`http://localhost:3000/resorts/${this.state.selectedState}`)
+      .then(resp => resp.json())
+      .then(data => {
+        this.setState({
+          topFive: data
+        });
+      });
+    // this.props.history.push('/top5resorts')
   };
- 
+
   // NOW DO A FETCH REQUEST TO PULL DATA FROM THAT STATE (I.E.: COLORADO!!)
   // FIRST SET UP ROUTES IN THE BACKEND
   // CONDITION CONTROLLER!
@@ -31,29 +37,18 @@ export default class App extends Component {
   // };
 
   render() {
+    // console.log(this.state.topFive)
     // console.log("selectedState from render: ", this.state.selectedState);
     return (
       <div>
-        <Switch>
-          <Route
-            exact
-            path="/top5resorts"
-            render={routerProps => (
-              <RecContainer {...routerProps} {...this.state.selectedState} />
-            )}
+        {this.state.topFive === null ? (
+          <Location
+            changeState={this.handleChangeState}
+            handleClick={this.handleClick}
           />
-          <Route
-            exact
-            path="/"
-            render={routerProps => (
-              <Location
-                changeState={this.handleChangeState}
-                handleClick={this.handleClick}
-                {...routerProps}
-              />
-            )}
-          />
-        </Switch>
+        ) : (
+          <RecContainer topFive={this.state.topFive} />
+        )}
       </div>
     );
   }

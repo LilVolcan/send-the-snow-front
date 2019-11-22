@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import { Image } from 'semantic-ui-react'
 
 export default class Location extends Component {
   state = {
@@ -17,12 +16,11 @@ export default class Location extends Component {
   }
 
   render() {
-    // console.log(this.props)
     return (
-      <div className="background">
-        <div className="intro-container">
-          <h1>WHERE IS THE FRESHEST POW?!</h1>
-          <select onChange={this.props.changeState}>
+      <div className="intro-page">
+        <div className="selection-container">
+          <h1>SEND ME TO THAT FRESH POW?!</h1>
+          <select className="select-css"onChange={this.props.changeState}>
             <option>Select A State</option>
             {this.state.states.map(state => (
               <option key={state.id} value={state.id}>

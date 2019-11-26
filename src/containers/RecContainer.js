@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Recommendation from "../components/Recommendation";
 import ModalView from "../components/ModalView";
-import { conditionalExpression } from "@babel/types";
+import SnowFallingDown from "../SnowFallingDown.mp4";
 
 export default class RecContainer extends Component {
   state = {
@@ -17,7 +17,6 @@ export default class RecContainer extends Component {
   };
 
   handleCloseModal = () => {
-    console.log("hello from the other siiiiiiiiiiide");
     this.setState({
       selectedResort: null,
       modal: false
@@ -32,6 +31,7 @@ export default class RecContainer extends Component {
           key={i}
           {...resort}
           handleModalView={this.handleModalView}
+          filter={this.props.filterBy}
         />
       );
     });
@@ -44,11 +44,22 @@ export default class RecContainer extends Component {
   };
 
   render() {
+    console.log(this.props)
     return (
       <>
         <div className="rec-bg">
+          <div>
+            <video
+              src={SnowFallingDown}
+              type="video/mp4"
+              autoPlay={true}
+              muted={true}
+              loop={true}
+            ></video>
+          </div>
+
           <div className="card-container">
-            TOP FIVE RECOMMENDATIONS:
+            <h3 fontWeight="bold">TOP FIVE RECOMMENDATIONS BASED ON { this.props.filterBy === "past_24_hour" ? "PAST 24 HOUR SNOWFALL" : "5 DAY FORECASTED SNOWFALL"}:</h3>
             {this.renderRecs()}
           </div>
           <div className="map-container"></div>

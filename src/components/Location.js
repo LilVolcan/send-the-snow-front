@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import mountain from "../mountain.mp4";
 
 export default class Location extends Component {
   state = {
@@ -18,9 +19,19 @@ export default class Location extends Component {
   render() {
     return (
       <div className="intro-page">
+        <div>
+          <video
+            src={mountain}
+            type="video/mp4"
+            autoPlay="true"
+            muted={true}
+            loop={true}
+          ></video>
+        </div>
         <div className="selection-container">
-          <h1>SEND ME TO THAT FRESH POW?!</h1>
-          <select className="select-css"onChange={this.props.changeState}>
+          <h1>SEND ME TO THAT FRESH POW!!!</h1>
+
+          <select className="select-css" onChange={this.props.changeState}>
             <option>Select A State</option>
             {this.state.states.map(state => (
               <option key={state.id} value={state.id}>
@@ -28,6 +39,19 @@ export default class Location extends Component {
               </option>
             ))}
           </select>
+
+          <select className="select-css" onChange={this.props.changeFilter}>
+            {" "}
+            // ADD ONCHANGE => SET STATE FOR FILTER
+            <option>Filter By:</option>
+            <option key="24-hour" value="past_24_hour">
+              Past 24 Hour Snowfall
+            </option>
+            <option key="5-day" value="next_5_day_snow">
+              Next 5 Day Snow Forecast
+            </option>
+          </select>
+
           <button className="select-state-btn" onClick={this.props.handleClick}>
             Let's Go!
           </button>

@@ -1,102 +1,209 @@
-.intro-page {
+/* .intro-page {
   padding: 430px;
   background-image: url("https://wallpaperaccess.com/full/133703.jpg");
   background-repeat: no-repeat;
   background-position: center;
+} */
+
+.intro-page {
+  position: relative;
+  width: 100vw; 
+  height: 100vh; 
+  overflow: hidden;
+}
+
+.pointer {
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+
 }
 
 .selection-container {
   position: absolute;
+  border: 1px solid black;
+  background-color: rgba(34, 42, 44, 0.8);
+  /* border-radius: 10px; */
+  height: 160px;
+  padding: 20px;
   text-align: center;
-  top: 25%;
-  /* left: 33%; */
+  top: 35%;
+  bottom: 10%;
+  left: 27%;
   color: whitesmoke;
   font-size: larger;
-  /* font-family: "Luckiest Guy", cursive; */
-  font-family: "Skranji", cursive;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .select-css {
-  /* display: block; */
   font-size: 25px;
   font-family: "Skranji", cursive;
   margin: 5px;
   border: 1px solid black;
   border-radius: 10px;
-  
+  font-family: 'Montserrat', sans-serif;
 }
 
 .select-state-btn {
   margin: 5px;
-  background-color: midnightblue;
+  background-color: rgb(97, 142, 179);
   color: whitesmoke;
   border-radius: 10px;
   font-size: 25px;
-  font-family: "Skranji", cursive;
-  
+  font-family: 'Montserrat', sans-serif;
 }
 
 .rec-bg {
+  position: relative;
   width: 100vw; 
   height: 100vh; 
-  background-color: rgb(222, 226, 226);
-  font-family: 'Ibarra Real Nova', serif, bold;
+  background-color: rgb(137, 168, 194);
+  font-family: 'Montserrat', sans-serif;
+}
+
+.one {
+  position: absolute;
+  font-size: 47px;
+  top: 11%;
+  left: 8%;
+}
+
+.two {
+  position: absolute;
+  font-size: 47px;
+  top: 24.5%;
+  left: 8%;
+}
+
+.three {
+  position: absolute;
+  font-size: 47px;
+  top: 38.5%;
+  left: 8%;
+}
+
+.four {
+  position: absolute;
+  font-size: 47px;
+  top: 52.5%;
+  left: 8%;
+}
+
+.five {
+  position: absolute;
+  font-size: 47px;
+  top: 66.5%;
+  left: 8%;
 }
 
 .card-container {
   position: absolute;
   text-align: center;
-  left: 5%;
-  right: 30%;
+  left: 10%;
   top: 3%;
-  /* font-family: 'Ibarra Real Nova', serif; */
-  /* if not using map, get rid of right: 30% */
+  right: 36%;
 }
 
-.style-cards {
+.cards {
   background-color: whitesmoke;
   border: 1px solid black;
   margin: 25px;
-  padding: 10px;
+  padding: 20px;
   border-radius: 8px;
-  font-family: 'Ibarra Real Nova', serif;
-  /* background-image: url('https://img6.onthesnow.com/image/xl/17/1715.jpg');
-  background-size: 1200px 200px;
-  background-repeat: no-repeat; */
-  /* right: 30%; */
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  /* FIGURE OUT HOW TO MAKE THIS BOLD IN THE SAME FONT! (THIS NOT WORKING CURRENTLY) */
 }
+
+.style-cards {
+    text-align:left;
+    position: relative;
+}
+
+.details-btn {
+  position: relative;
+  top: 10px;
+  display: inline-block;
+  padding:0.35em 1.2em;
+  border:0.1em solid black;
+  margin:0 0.3em 0.3em 0;
+  border-radius: 4px;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-family: 'Montserrat', sans-serif;
+  font-weight:300;
+  color:black;
+  float: right;
+  transition: all 0.2s;
+}
+
+.details-btn:hover{
+  color:white;
+  background-color:rgb(97, 142, 179);
+}
+  
+@media all and (max-width:30em){
+.details-btn{
+  display:block;
+  margin:0.4em auto;
+  }
+}
+
 
 .map-container {
   position: absolute;
-  left: 73%;
+  left: 67%;
   right: 5%;
   border: 1px solid black;
   border-radius: 8px;
-  top: 8%;
-  height: 300px;
+  top: 9.8%;
+  height: 400px;
   background-image: url("http://snowbrains.com/wp-content/uploads/2015/02/Screen-Shot-2015-02-03-at-1.46.19-PM-620x394.png");
   background-size: 100%;
+}
+
+.address-input {
+  position: absolute;
+  left: 73%;
+  right: 5%;
+  top: 50%;
+  width: 200px;
 }
 
 .modal {
   width: 100%;
   height: 100%;
-  background-color: rgba(7, 15, 109, 0.8);
+  background-color: rgba(67, 67, 70, 0.9);
   position: absolute;
   top: 0;
   display: flex;
   justify-content: center;
+  /* text-align: left; */
   align-items: center;
+  
 }
 
 .modal-content {
-  width: 800px;
-  height: 500px;
+  width: 40%;
+  height: 50%;
   background-color: whitesmoke;
-  padding: 10px;
+  padding: 30px;
   border-radius: 8px;
-  text-align: center;
+  /* text-align: left; */
   position: relative;
+  display: flex;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.resort-image {
+  border: 1px solid whitesmoke;
+  border-radius: 4px;
+}
+
+.conditions {
+ position: absolute;
+ left: 55%;
+ top: 20%;
+ 
 }
 
 .close-btn {

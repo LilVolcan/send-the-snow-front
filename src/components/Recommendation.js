@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 
 export default class Recommendation extends Component {
-  snowfall = inches => {
-    if (inches === "") {
-      return 0;
-    } else {
-      return inches;
-    }
-  };
+  // snowfall = inches => {
+  //   if (inches === "") {
+  //     return 0;
+  //   } else {
+  //     return inches;
+  //   }
+  // };
 
   render() {
     const { name, id } = this.props.attributes;
@@ -20,21 +20,23 @@ export default class Recommendation extends Component {
     } = this.props.attributes.conditions[0];
 
     return (
-      <div className="style-cards">
-        <h1>
-          {name}{" "}
-          {this.props.filter === "past_24_hour"
+      <div className="cards">
+        <div className="style-cards">
+          <button
+            className="details-btn"
+            // style={{ borderRadius: "4px" }}
+            onClick={() => this.props.handleModalView(id)}
+          >
+            Details
+          </button>
+          <h1>
+            {name}{" "}
+            {/* {this.props.filter === "past_24_hour"
             ? this.snowfall(past_24_hour)
             : this.snowfall(next_5_day_snow)}
-          "
-        </h1>
-
-        <button
-          style={{ borderRadius: "4px" }}
-          onClick={() => this.props.handleModalView(id)}
-        >
-          Details
-        </button>
+          " */}
+          </h1>
+        </div>{" "}
       </div>
     );
   }

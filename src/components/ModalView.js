@@ -2,7 +2,14 @@ import React, { Component } from "react";
 
 export default class ModalView extends Component {
   render() {
-    const { name } = this.props.attributes;
+    console.log(this.props);
+    const {
+      name,
+      image_url,
+      base_elevation,
+      summit_elevation,
+      resort_link
+    } = this.props.attributes;
     const {
       next_day_snow,
       base_depth,
@@ -18,20 +25,28 @@ export default class ModalView extends Component {
           </div>
           <div>
             <h1 textAlign="left">{name}</h1>
+            <br></br>
             <img
-            className="resort-image"
-              src="https://images.vailresorts.com/image/upload/c_scale,dpr_3.0,f_auto,q_auto,w_500/v1/Vail/Products/Brochure/The%20Mountain/About%20the%20Mountain/Mountain%20Info/Vail%20Mountain%20Info%20Winter.jpg"
+              className="resort-image"
+              src={image_url}
               alt="resort"
               width="300"
               height="300"
             />
+            <br></br>
+            <br></br>
+            <a href={resort_link}>{name}</a>
           </div>
           <div className="conditions">
-            <h3> Conditions </h3>
+            <h3> Conditions </h3><br></br>
             <p> ❄️ Last 24 Hours: {past_24_hour === "" ? 0 : past_24_hour}" </p>
             <p> ❄️ Base Depth: {base_depth === "" ? 0 : base_depth}" </p>
-            <p> ❄️ Percentage Open: {area_open === "" ? 0 : area_open}% </p><br></br>
-            <h3> Forecast </h3>
+            <p> 🏔 Summit Elevation: {summit_elevation} ft.</p>
+            <p> 🏔 Base Elevation: {base_elevation} ft.</p>
+            <p> ❄️ Percentage Open: {area_open === "" ? 0 : area_open}% </p>
+          </div>
+          <div className="forecast">
+            <h3> Forecast </h3><br></br>
             <p> ❄️ Next 1 Day: {next_day_snow === "" ? 0 : next_day_snow}" </p>
             <p>
               {" "}

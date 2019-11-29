@@ -183,10 +183,10 @@
 }
 
 .modal-content {
-  width: 40%;
-  height: 50%;
+  width: 55%;
+  height: 60%;
   background-color: whitesmoke;
-  padding: 30px;
+  padding: 3%;
   border-radius: 8px;
   /* text-align: left; */
   position: relative;
@@ -201,9 +201,14 @@
 
 .conditions {
  position: absolute;
- left: 55%;
- top: 20%;
- 
+ left: 43%;
+ top: 24%;
+}
+
+.forecast {
+  position: absolute;
+  left: 75%;
+  top: 24%
 }
 
 .close-btn {

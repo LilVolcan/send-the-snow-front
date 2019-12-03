@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 export default class ModalView extends Component {
   render() {
-    console.log(this.props);
+    // console.log(this.props);
     const {
       name,
       image_url,
@@ -26,14 +26,15 @@ export default class ModalView extends Component {
           <div>
             <h1 textAlign="left">{name}</h1>
             <br></br>
-            <img
-              className="resort-image"
+            <div className="img-holder">
+              <img
+              // className="resort-image"
               src={image_url}
               alt="resort"
-              width="300"
-              height="300"
             />
-            <br></br>
+            </div>
+            
+            {/* <br></br> */}
             <br></br>
             <a href={resort_link}>{name}</a>
           </div>

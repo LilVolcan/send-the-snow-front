@@ -18,16 +18,17 @@
 }
 
 .selection-container {
+  display: inline-block;
   position: absolute;
   border: 1px solid white;
   background-color: rgba(34, 42, 44, 0.8);
   /* border-radius: 10px; */
   height: 160px;
-  padding: 20px;
+  padding: 30px;
   text-align: center;
   top: 35%;
   bottom: 10%;
-  left: 27%;
+  left: 32%;
   color: whitesmoke;
   font-size: larger;
   font-family: "Montserrat", sans-serif;

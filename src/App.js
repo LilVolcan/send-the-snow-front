@@ -11,7 +11,7 @@ const WrappedMap = withScriptjs(withGoogleMap(MapContainer));
 export default class App extends Component {
   state = {
     selectedState: null,
-    filterBy: null, // CONSIDER ADDING MORE FILTERS (I.E., ACREAGE OPEN???)
+    // filterBy: null, 
     topFive: null,
     // selectedResort: null
   };
@@ -31,11 +31,11 @@ export default class App extends Component {
     });
   };
 
-  handleChangeFilter = event => {
-    this.setState({
-      filterBy: event.target.value
-    });
-  };
+  // handleChangeFilter = event => {
+  //   this.setState({
+  //     filterBy: event.target.value
+  //   });
+  // };
 
   handleClick = () => {
     if (this.state.selectedState === null) {
@@ -66,7 +66,7 @@ export default class App extends Component {
         {this.state.topFive === null ? (
           <Location
             changeState={this.handleChangeState}
-            changeFilter={this.handleChangeFilter}
+            // changeFilter={this.handleChangeFilter}
             handleClick={this.handleClick}
           />
         ) : (

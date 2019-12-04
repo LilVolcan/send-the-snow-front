@@ -18,10 +18,6 @@ export default class Location extends Component {
       });
   }
 
-  // componentWillUnmount() {
-
-  // }
-
   render() {
     return (
       <div className="intro-page">
@@ -36,6 +32,7 @@ export default class Location extends Component {
             loop={true}
           ></video>
         </div>
+
         <div className="selection-container">
           <h1>SHOW ME THE POWDER!</h1>
           <div className="filters">
@@ -51,7 +48,7 @@ export default class Location extends Component {
               ))}
             </select>
 
-            <select className="select-css" onChange={this.props.changeFilter}>
+            {/* <select className="select-css" onChange={this.props.changeFilter}>
               {" "}
               <option>Filter By:</option>
               <option key="24-hour" value="past_24_hour">
@@ -60,7 +57,7 @@ export default class Location extends Component {
               <option key="5-day" value="next_5_day_snow">
                 Next 5 Day Snow Forecast
               </option>
-            </select>
+            </select> */}
 
             <button
               className="select-state-btn"

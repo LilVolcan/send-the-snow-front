@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { GoogleMap, Marker, InfoWindow } from "react-google-maps";
+import MapStyles from '../components/MapStyles'
 
 const fitBounds = (map, data) => {
   const bounds = new window.google.maps.LatLngBounds();
@@ -29,7 +30,7 @@ export default class MapContainer extends Component {
         ref={map => {
           fitBounds(map, data);
         }}
-        // defaultOptions={{ styles: MapStyles }}
+        defaultOptions={{ styles: MapStyles }}
       >
         {data.map(resort => (
           <Marker

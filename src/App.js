@@ -8,6 +8,8 @@ import { withScriptjs, withGoogleMap } from "react-google-maps";
 
 const WrappedMap = withScriptjs(withGoogleMap(MapContainer));
 
+const API_KEY = process.env.REACT_APP_MAPS_API_KEY;
+
 export default class App extends Component {
   state = {
     selectedState: null,
@@ -75,7 +77,7 @@ export default class App extends Component {
             <div className="map-container">
               <WrappedMap
                 googleMapURL={
-                  "https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyDFtDeSpeuq9Vwi4vXPEihF8K_ES5KJsc8"
+                  `https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${API_KEY}`
                 }
                 loadingElement={<div style={{ height: `100%` }} />}
                 containerElement={<div style={{ height: `400px` }} />}
